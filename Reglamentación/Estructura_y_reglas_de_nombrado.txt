@@ -16,6 +16,9 @@ TRABAJOS PRÁCTICOS EVALUABLES:
 TP<nro>_grupo4.pdf
 TRABAJOSPRACTICOS_NO_EVALUABLES:
 TP<nro>_<tema>.pdf
-Proyecto
+
+Componentes de software
 <nombre_proyecto>.rar
+ISW_<nombre_componente>.<extension>
+
 Estructura_y_reglas_de_nombrado.txt
