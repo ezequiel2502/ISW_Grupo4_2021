@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.isw_delivereat">
+    package="com.example.isw_deliveryeat">
    <application
-        android:label="isw_delivereat"
+        android:label="isw_deliveryeat"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

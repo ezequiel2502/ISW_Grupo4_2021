@@ -1,4 +1,4 @@
-package com.example.isw_delivereat;
+package com.example.isw_deliveryeat;
 
 import io.flutter.embedding.android.FlutterActivity;
 
