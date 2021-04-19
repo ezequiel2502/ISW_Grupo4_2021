@@ -46,7 +46,7 @@ class AddToCart extends StatelessWidget {
                 color: product.color,
                 onPressed: () {},
                 child: Text(
-                  "Buy  Now".toUpperCase(),
+                  "Agregar a mi pedido".toUpperCase(),
                   style: TextStyle(
                     fontSize: 17,
                     fontWeight: FontWeight.bold,
