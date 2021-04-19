@@ -31,9 +31,15 @@ class ProductTitleWithImage extends StatelessWidget {
                 .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
           ),
           SmoothStarRating(
-            borderColor: Colors.blue,
+            color: Colors.white,
+            borderColor: Colors.white,
               rating: 4.5,
           ),
+          SizedBox(width: 10,),
+          Text("10 reseñas",
+            style: TextStyle(color: Colors.white),
+          ),
+
           SizedBox(height: kDefaultPaddin),
           Row(
             children: <Widget>[

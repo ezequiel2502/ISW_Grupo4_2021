@@ -22,7 +22,7 @@ List<Product> products = [
       size: 12,
       description: "Pan, 2 hamburguesas, queso chedar, lechuga, tomate, pepino y cebolla.",
       image: "assets/images/mc_big_mac.png",
-      color: Color(0xFFFFE144)),
+      color: Color(0xFFFAD809)),
 
   Product(
       id: 2,
@@ -31,7 +31,7 @@ List<Product> products = [
       size: 12,
       description: "Pan, hamburguesa de pollito, queso chedar, lechuga, tomate",
       image: "assets/images/mc_chiken.png",
-      color: Color(0xFFFFE144)),
+      color: Color(0xFFFAD809)),
 
   Product(
       id: 3,
@@ -40,6 +40,6 @@ List<Product> products = [
       size: 12,
       description: "Pan, 2 medallones de carne, queso chedar, lechuga, tomate",
       image: "assets/images/mc_doble_cuarto.png",
-      color: Color(0xFFFFE144)),
+      color: Color(0xFFFAD809)),
 ];
 
