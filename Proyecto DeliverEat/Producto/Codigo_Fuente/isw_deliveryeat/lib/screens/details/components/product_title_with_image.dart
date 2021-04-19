@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:isw_deliveryeat/models/Product.dart';
 import '../../../constants.dart';
+import 'package:smooth_star_rating/smooth_star_rating.dart';
+
 
 class ProductTitleWithImage extends StatelessWidget {
   const ProductTitleWithImage({
@@ -27,6 +29,10 @@ class ProductTitleWithImage extends StatelessWidget {
                 .textTheme
                 .headline4
                 .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
+          ),
+          SmoothStarRating(
+            borderColor: Colors.blue,
+              rating: 4.5,
           ),
           SizedBox(height: kDefaultPaddin),
           Row(
