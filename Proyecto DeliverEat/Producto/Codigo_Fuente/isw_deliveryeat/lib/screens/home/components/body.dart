@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:isw_deliveryeat/models/Product.dart';
+import 'package:isw_deliveryeat/models/items.dart';
 import 'package:isw_deliveryeat/screens/details/details_screen.dart';
 import 'package:isw_deliveryeat/screens/home/components/confirm_order.dart';
 import '../../../constants.dart';
@@ -23,9 +24,9 @@ class Body extends StatelessWidget {
                 .copyWith(fontWeight: FontWeight.bold),
           ),
         ),
-        CheckBox(),
-        // Categories(),
-        /* Expanded(
+        /*CheckBox(),
+         Categories(),
+          Expanded(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
             child: GridView.builder(
@@ -48,20 +49,25 @@ class Body extends StatelessWidget {
                     )),
           ),
         ),*/
-      IconButton(
-        icon: new Image.asset(
-          "assets/icons/confirm.png",
-          color: kTextColor,
+
+        RaisedButton.icon( elevation: 4.0,
+            icon: Image.asset("assets/icons/cancel.png",
+              width: 20,
+              height: 20,),
+            color: Colors.red,
+            onPressed: () {},
+            label: Text("\nCancelar pedido",style: TextStyle(
+                color: Colors.black, fontSize: 16.0))
         ),
-      onPressed: () {},
-      ),
-      Text(
-          "Confirmar pedido",
-          style: TextStyle(
+      RaisedButton.icon( elevation: 4.0,
+            icon: Image.asset("assets/icons/confirm.png",
+              width: 20,
+              height: 20,),
             color: Colors.green,
-            fontSize: 20,
-          )
-      )
+            onPressed: () {},
+            label: Text("\nConfirmar pedido",style: TextStyle(
+                color: Colors.black, fontSize: 16.0))
+        ),
     ],
     );
   }
