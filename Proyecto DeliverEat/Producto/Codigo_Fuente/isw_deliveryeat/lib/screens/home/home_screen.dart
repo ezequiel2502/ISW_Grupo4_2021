@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:isw_deliveryeat/screens/home/components/body.dart';
+import 'package:isw_deliveryeat/screens/home/components/confirm_order.dart';
 import '../../constants.dart';
 
 class HomeScreen extends StatelessWidget {

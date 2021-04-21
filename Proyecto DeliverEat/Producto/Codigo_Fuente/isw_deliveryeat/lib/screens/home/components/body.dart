@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:isw_deliveryeat/models/Product.dart';
 import 'package:isw_deliveryeat/screens/details/details_screen.dart';
+import 'package:isw_deliveryeat/screens/home/components/confirm_order.dart';
 import '../../../constants.dart';
 import 'categorries.dart';
 import 'item_card.dart';
@@ -21,8 +23,9 @@ class Body extends StatelessWidget {
                 .copyWith(fontWeight: FontWeight.bold),
           ),
         ),
-        Categories(),
-        Expanded(
+        CheckBox(),
+        // Categories(),
+        /* Expanded(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
             child: GridView.builder(
@@ -44,8 +47,22 @@ class Body extends StatelessWidget {
                           )),
                     )),
           ),
+        ),*/
+      IconButton(
+        icon: new Image.asset(
+          "assets/icons/confirm.png",
+          color: kTextColor,
         ),
-      ],
+      onPressed: () {},
+      ),
+      Text(
+          "Confirmar pedido",
+          style: TextStyle(
+            color: Colors.green,
+            fontSize: 20,
+          )
+      )
+    ],
     );
   }
 }
