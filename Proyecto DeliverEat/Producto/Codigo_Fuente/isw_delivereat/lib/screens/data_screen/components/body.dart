@@ -1,3 +1,4 @@
+import 'package:dropdownfield/dropdownfield.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatefulWidget {
@@ -25,6 +26,19 @@ class _BodyState extends State<Body> {
                 labelText: "Numero de la calle",
               ),
             ),
+            DropDownField(
+              controller: citiesSelected,
+              labelText: "Ciudad",
+              hintText: "Ingresar ciudad",
+              enabled: true,
+              itemsVisibleInDropdown: 5,
+              items: cities,
+              onValueChanged: (value){
+                setState(() {
+                  selectCity = value;
+                });
+              },
+            )
           ],
         ),
 
@@ -33,3 +47,18 @@ class _BodyState extends State<Body> {
     );
   }
 }
+
+String selectCity = "";
+
+final citiesSelected = TextEditingController();
+
+List<String> cities = [
+  "Cordoba",
+  "Ciudad2",
+  "Ciudad3",
+  "Ciudad4",
+  "Ciudad5",
+  "Ciudad6",
+  "Ciudad7",
+  "Ciudad8",
+];

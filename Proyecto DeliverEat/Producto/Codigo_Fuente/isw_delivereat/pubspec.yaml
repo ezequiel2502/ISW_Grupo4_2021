@@ -1,4 +1,4 @@
-name: shop_app
+name: isw_delivereat
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -30,6 +30,7 @@ dependencies:
   # if you are using latest flutter please update your flutter_svg package to ^0.18.*
   flutter_svg: ^0.19.1 # help us to use SVG in our app
   provider: ^4.3.1 # for State management
+  dropdownfield: ^1.0.3
 
 dev_dependencies:
   flutter_test:
