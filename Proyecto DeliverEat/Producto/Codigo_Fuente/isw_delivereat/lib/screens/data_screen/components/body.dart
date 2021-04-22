@@ -1,5 +1,10 @@
 import 'package:dropdownfield/dropdownfield.dart';
 import 'package:flutter/material.dart';
+import 'package:isw_delivereat/components/default_button.dart';
+import 'package:isw_delivereat/screens/product_confirmation/confirmation_screen.dart';
+
+import '../../../size_config.dart';
+import '../data_screen.dart';
 
 class Body extends StatefulWidget {
   @override
@@ -38,12 +43,19 @@ class _BodyState extends State<Body> {
                   selectCity = value;
                 });
               },
-            )
+            ),
+            SizedBox(
+              width: getProportionateScreenWidth(190),
+              child: DefaultButton(
+                text: "Finalizar Pedido",
+                press: () {
+                  Navigator.pushNamed(context, ConfirmationScreen.routeName);
+                },
+              ),
+            ),
           ],
         ),
-
       ),
-
     );
   }
 }

@@ -65,10 +65,6 @@ class _BodyState extends State<Body> {
                   padding: EdgeInsets.all(10),
                   height: getProportionateScreenWidth(40),
                   width: getProportionateScreenWidth(40),
-                  decoration: BoxDecoration(
-                    color: Color(0xFFF5F6F9),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
                 ),
                 Spacer(),
                 const SizedBox(width: 10),
