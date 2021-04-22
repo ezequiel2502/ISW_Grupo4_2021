@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:isw_deliveryeat/components/default_button.dart';
+import 'package:isw_deliveryeat/screens/data_screen/data_screen.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -77,8 +78,10 @@ class CheckoutCard extends StatelessWidget {
                 SizedBox(
                   width: getProportionateScreenWidth(190),
                   child: DefaultButton(
-                    text: "Realizar pedido",
-                    press: () {},
+                    text: "Continuar",
+                    press: () {
+                      Navigator.pushNamed(context, DataScreen.routeName);
+                    },
                   ),
                 ),
               ],

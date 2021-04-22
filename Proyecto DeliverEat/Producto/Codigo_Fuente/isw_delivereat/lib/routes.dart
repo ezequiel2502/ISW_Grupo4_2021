@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:isw_deliveryeat/screens/cart/cart_screen.dart';
+import 'package:isw_deliveryeat/screens/data_screen/data_screen.dart';
 import 'package:isw_deliveryeat/screens/splash/splash_screen.dart';
 
 
@@ -9,4 +10,5 @@ import 'package:isw_deliveryeat/screens/splash/splash_screen.dart';
 final Map<String, WidgetBuilder> routes = {
   SplashScreen.routeName: (context) => SplashScreen(),
   CartScreen.routeName: (context) => CartScreen(),
+  DataScreen.routeName: (context) => DataScreen(),
 };
