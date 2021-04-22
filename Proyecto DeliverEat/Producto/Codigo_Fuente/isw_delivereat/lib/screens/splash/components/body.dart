@@ -14,15 +14,15 @@ class _BodyState extends State<Body> {
   int currentPage = 0;
   List<Map<String, String>> splashData = [
     {
-      "text": "Bienvenido a DeliverEat,¿Que vas a pedir hoy?!",
+      "text": "Bienvenido a DeliverEat!,¿Que vas a pedir hoy?",
       "image": "assets/images/splash_1.png"
     },
     {
-      "text": "Pedi todo lo que quieras, \nen el local que quieras!",
+      "text": "Todas tus comidas favoritas, \nen el local que quieras!",
       "image": "assets/images/splash_2.png"
     },
     {
-      "text": "No se que poner aca!. \nJuan se queda sin ideas!",
+      "text": "Ordena, \nNosotros te lo llevamos!",
       "image": "assets/images/splash_3.png"
     },
   ];
