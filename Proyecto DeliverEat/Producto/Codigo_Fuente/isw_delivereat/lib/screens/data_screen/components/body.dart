@@ -8,15 +8,27 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Scaffold(
+      body: Padding(
         padding: EdgeInsets.all(20),
-        child: TextField(
-          decoration: InputDecoration(
-            filled: true,
-            labelText: "Direccion",
-          ),
+        child: ListView(
+          children: [
+            TextField(
+              decoration: InputDecoration(
+                filled: true,
+                labelText: "Direccion (Nombre de la calle) ",
+              ),
+            ),
+            TextField(
+              decoration: InputDecoration(
+                filled: true,
+                labelText: "Numero de la calle",
+              ),
+            ),
+          ],
         ),
 
+      ),
 
     );
   }
