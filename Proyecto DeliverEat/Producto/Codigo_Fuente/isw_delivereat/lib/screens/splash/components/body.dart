@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:isw_deliveryeat/constants.dart';
-import 'package:isw_deliveryeat/size_config.dart';
+import '../../../constants.dart';
+import '../../../size_config.dart';
 import '../../cart/cart_screen.dart';
 import '../components/splash_content.dart';
 import '../../../components/default_button.dart';

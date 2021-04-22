@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
-import 'package:isw_deliveryeat/screens/cart/cart_screen.dart';
-import 'package:isw_deliveryeat/screens/data_screen/data_screen.dart';
-import 'package:isw_deliveryeat/screens/splash/splash_screen.dart';
+import 'screens/cart/cart_screen.dart';
+import 'screens/data_screen/data_screen.dart';
+import 'screens/splash/splash_screen.dart';
 
 
 

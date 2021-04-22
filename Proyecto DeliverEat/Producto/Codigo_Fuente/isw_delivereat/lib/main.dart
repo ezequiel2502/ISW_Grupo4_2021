@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:isw_deliveryeat/routes.dart';
-import 'package:isw_deliveryeat/screens/splash/splash_screen.dart';
-import 'package:isw_deliveryeat/theme.dart';
+import 'routes.dart';
+import 'screens/splash/splash_screen.dart';
+import 'theme.dart';
 
 void main() {
   runApp(MyApp());

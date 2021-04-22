@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:isw_deliveryeat/models/Cart.dart';
-import 'package:isw_deliveryeat/screens/data_screen/components/body.dart';
-import 'package:isw_deliveryeat/size_config.dart';
+import 'components/body.dart';
 
 class DataScreen extends StatelessWidget {
   static String routeName = "/data";
