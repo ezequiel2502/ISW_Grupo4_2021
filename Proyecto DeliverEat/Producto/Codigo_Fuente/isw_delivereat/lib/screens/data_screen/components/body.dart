@@ -2,9 +2,7 @@ import 'package:dropdownfield/dropdownfield.dart';
 import 'package:flutter/material.dart';
 import 'package:isw_delivereat/components/default_button.dart';
 import 'package:isw_delivereat/screens/product_confirmation/confirmation_screen.dart';
-
 import '../../../size_config.dart';
-import '../data_screen.dart';
 
 class Body extends StatefulWidget {
   @override
@@ -12,6 +10,7 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
+  SingingCharacter _character = SingingCharacter.ya;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,12 +24,14 @@ class _BodyState extends State<Body> {
                 labelText: "Direccion (Nombre de la calle) ",
               ),
             ),
+            SizedBox(height: 15,),
             TextField(
               decoration: InputDecoration(
                 filled: true,
                 labelText: "Numero de la calle",
               ),
             ),
+            SizedBox(height: 15,),
             DropDownField(
               controller: citiesSelected,
               labelText: "Ciudad",
@@ -44,6 +45,34 @@ class _BodyState extends State<Body> {
                 });
               },
             ),
+            SizedBox(height: 15,),
+
+            ListTile(
+              title: const Text('Lo antes posible'),
+              leading: Radio<SingingCharacter>(
+                value: SingingCharacter.ya,
+                groupValue: _character,
+                onChanged: (SingingCharacter value) {
+                  setState(() {
+                    _character = value;
+                  });
+                },
+              ),
+            ),
+            ListTile(
+              title: const Text('Otro dia/horario'),
+              leading: Radio<SingingCharacter>(
+                value: SingingCharacter.otro,
+                groupValue: _character,
+                onChanged: (SingingCharacter value) {
+                  setState(() {
+                    _character = value;
+                  });
+                },
+              ),
+            ),
+
+            SizedBox(height: 15,),
             SizedBox(
               width: getProportionateScreenWidth(190),
               child: DefaultButton(
@@ -59,6 +88,8 @@ class _BodyState extends State<Body> {
     );
   }
 }
+
+enum SingingCharacter { ya, otro}
 
 String selectCity = "";
 
