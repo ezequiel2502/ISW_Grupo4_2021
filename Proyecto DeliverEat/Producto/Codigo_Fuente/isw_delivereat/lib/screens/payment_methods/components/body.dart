@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:isw_delivereat/screens/payment_methods/payment_screen.dart';
-import '../../../components/default_button.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:isw_delivereat/components/default_button.dart';
+import 'package:isw_delivereat/screens/data_screen/data_screen.dart';
+
 import '../../../constants.dart';
 import '../../../size_config.dart';
-import '../../data_screen/data_screen.dart';
+import '../payment_screen.dart';
 
-class CheckoutCard extends StatelessWidget {
-  const CheckoutCard({
-    Key key,
-  }) : super(key: key);
+class Body extends StatefulWidget {
+  @override
+  _BodyState createState() => _BodyState();
+}
 
+class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -38,6 +40,25 @@ class CheckoutCard extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(height: getProportionateScreenHeight(20)),
+
+            //Boton en efectivo
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(
+                  width: getProportionateScreenWidth(190),
+                  child: DefaultButton(
+                    text: "Efectivo",
+                    press: () {
+                      Navigator.pushNamed(context, DataScreen.routeName);
+                    },
+                  ),
+                ),
+              ],
+            ),
+
+            //Espacio en blanco
             Row(
               children: [
                 Container(
@@ -48,39 +69,22 @@ class CheckoutCard extends StatelessWidget {
                     color: Color(0xFFF5F6F9),
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: SvgPicture.asset("assets/icons/receipt.svg"),
                 ),
                 Spacer(),
-                Text("Añadir codigo de descuento"),
                 const SizedBox(width: 10),
-                Icon(
-                  Icons.arrow_forward_ios,
-                  size: 12,
-                  color: kTextColor,
-                )
               ],
             ),
-            SizedBox(height: getProportionateScreenHeight(20)),
+
+            //Boton tarjeta visa
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text.rich(
-                  TextSpan(
-                    text: "Total:\n",
-                    children: [
-                      TextSpan(
-                        text: "\$337.15",
-                        style: TextStyle(fontSize: 16, color: Colors.black),
-                      ),
-                    ],
-                  ),
-                ),
                 SizedBox(
                   width: getProportionateScreenWidth(190),
                   child: DefaultButton(
-                    text: "Continuar",
+                    text: "Tarjeta Visa",
                     press: () {
-                      Navigator.pushNamed(context, PaymentScreen.routeName);
+                      Navigator.pushNamed(context, DataScreen.routeName);
                     },
                   ),
                 ),
