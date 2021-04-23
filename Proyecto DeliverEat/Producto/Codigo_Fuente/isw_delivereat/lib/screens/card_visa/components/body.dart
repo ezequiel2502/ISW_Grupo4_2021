@@ -18,6 +18,10 @@ class _BodyState extends State<Body> {
           padding: EdgeInsets.all(20),
           child: ListView(
             children: [
+              Image.asset(
+                "assets/images/front_card.png",
+                height: SizeConfig.screenHeight * 0.4, //40%
+              ),
               TextField(
                 keyboardType: TextInputType.text,
                 decoration: InputDecoration(
