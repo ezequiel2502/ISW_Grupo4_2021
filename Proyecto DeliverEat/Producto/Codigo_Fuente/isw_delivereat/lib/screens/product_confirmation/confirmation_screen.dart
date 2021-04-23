@@ -9,18 +9,8 @@ class ConfirmationScreen extends StatelessWidget {
     // You have to call it on your starting screen
     return Scaffold(
       appBar: AppBar(
-        title: Column(
-          children: [
-            Text(
-              "Pedido Realizado",
-              style: TextStyle(color: Colors.black),
-            ),
-            Text(
-              "Gracias por tu compra!",
-              style: Theme.of(context).textTheme.caption,
-            ),
-          ],
-        ),
+        leading: SizedBox(),
+        title: Text("Pedido recibido"),
       ),
       body: Body(),
     );

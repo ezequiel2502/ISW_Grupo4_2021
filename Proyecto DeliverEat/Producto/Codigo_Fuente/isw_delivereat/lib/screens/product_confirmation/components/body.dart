@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:isw_delivereat/components/default_button.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -11,21 +12,32 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Stack(
-        alignment: Alignment.bottomCenter,
-        children: [
-          Image.asset("assets/images/success.png"),
-          Text(
-            "Pedido Realizado",
-            style: TextStyle(
-              fontSize: getProportionateScreenWidth(36),
-              color: kPrimaryColor,
-              fontWeight: FontWeight.bold,
-            ),
+    return Column(
+      children: [
+        SizedBox(height: SizeConfig.screenHeight * 0.04),
+        Image.asset(
+          "assets/images/success.png",
+          height: SizeConfig.screenHeight * 0.4, //40%
+        ),
+        SizedBox(height: SizeConfig.screenHeight * 0.08),
+        Text(
+          "               Muchas gracias! \nRecibimos tu pedido correctamente.",
+          style: TextStyle(
+            fontSize: getProportionateScreenWidth(20),
+            color: kPrimaryColor,
+            fontWeight: FontWeight.bold,
           ),
-        ],
-      ),
+        ),
+        Spacer(),
+        SizedBox(
+          width: SizeConfig.screenWidth * 0.6,
+          child: DefaultButton(
+            text: "Volver al inicio",
+            press: () {},
+          ),
+        ),
+        Spacer(),
+      ],
     );
   }
 }
