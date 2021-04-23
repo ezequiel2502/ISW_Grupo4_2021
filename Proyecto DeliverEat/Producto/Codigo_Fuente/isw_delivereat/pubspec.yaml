@@ -31,11 +31,22 @@ dependencies:
   flutter_svg: ^0.19.1 # help us to use SVG in our app
   provider: ^4.3.1 # for State management
   dropdownfield: ^1.0.3
+  flutter_launcher_icons: ^0.8.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
+flutter_launcher_icon:
+  path: ../
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path_android: "assets/icons/gorro-chef.png"
+  image_path_ios: "assets/icons/gorro-chef.png"
+  adaptative_icon:background: "assets/icons/gorro-chef.png"
+  adaptative_icon:foreground: "assets/icons/gorro-chef.png"
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
