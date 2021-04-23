@@ -1,4 +1,5 @@
 import 'package:dropdownfield/dropdownfield.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:isw_delivereat/components/default_button.dart';
 import 'package:isw_delivereat/screens/product_confirmation/confirmation_screen.dart';
@@ -13,6 +14,9 @@ class _BodyState extends State<Body> {
   SingingCharacter _character = SingingCharacter.ya;
   DateTime _dateTime;
   TimeOfDay _time;
+  String direccion = "";
+  String numero = "";
+  String ciudad ="";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,6 +27,11 @@ class _BodyState extends State<Body> {
             TextField(
               keyboardType: TextInputType.text,
               maxLength: 25,
+              onChanged: (value) {
+                setState(() {
+                  direccion = value;
+                });
+              },
               decoration: InputDecoration(
                 filled: true,
                 labelText: "Direccion (Nombre de la calle) ",
@@ -32,6 +41,11 @@ class _BodyState extends State<Body> {
             TextField(
               keyboardType: TextInputType.number,
               maxLength: 5,
+              onChanged: (value) {
+                setState(() {
+                  numero = value;
+                });
+              },
               decoration: InputDecoration(
                 filled: true,
                 labelText: "Numero de la calle",
@@ -48,6 +62,7 @@ class _BodyState extends State<Body> {
               onValueChanged: (value){
                 setState(() {
                   selectCity = value;
+                  ciudad = value;
                 });
               },
             ),
@@ -100,7 +115,34 @@ class _BodyState extends State<Body> {
               child: DefaultButton(
                 text: "Finalizar Pedido",
                 press: () {
-                  Navigator.pushNamed(context, ConfirmationScreen.routeName);
+                  bool flag = false;
+                  for(int i=0; i < cities.length; i++){
+                    if(cities[i] == ciudad && numero != "" && direccion != ""){
+                      flag = true;
+                      break;
+                    }
+                    else{
+                      continue;
+                    }
+                  }
+                  if(flag == true){
+                    Navigator.pushNamed(context, ConfirmationScreen.routeName);
+                  }
+                  else{
+                    showDialog(context: context,
+                        builder: (BuildContext context) => AlertDialog(
+                          title: Text("No puede dejar campos vacios!"),
+                          content: Text("Vuelva a intentar."),
+                          actions: <Widget>[
+                            FlatButton(
+                                onPressed: (){
+                                  Navigator.of(context).pop("Ok");
+                                },
+                                child: Text("Ok"))
+                          ],
+                        )
+                    );
+                  }
                 },
               ),
             ),
@@ -110,7 +152,6 @@ class _BodyState extends State<Body> {
     );
   }
 }
-
 
 enum SingingCharacter { ya, otro}
 
