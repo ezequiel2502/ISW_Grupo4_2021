@@ -11,6 +11,8 @@ class Body extends StatefulWidget {
 
 class _BodyState extends State<Body> {
   SingingCharacter _character = SingingCharacter.ya;
+  DateTime _dateTime;
+  TimeOfDay _time;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +22,7 @@ class _BodyState extends State<Body> {
           children: [
             TextField(
               keyboardType: TextInputType.text,
-              maxLength: 20,
+              maxLength: 25,
               decoration: InputDecoration(
                 filled: true,
                 labelText: "Direccion (Nombre de la calle) ",
@@ -70,23 +72,29 @@ class _BodyState extends State<Body> {
                 groupValue: _character,
                 onChanged: (SingingCharacter value) {
                   setState(() {
+                    showDatePicker(context: context,
+                        initialDate: DateTime.now(),
+                        firstDate: DateTime.now(),
+                        lastDate: DateTime(9999)).then((value){
+                          setState(() {
+                      _dateTime = value;
+                    });
+                        });
+                    showTimePicker(context: context,
+                        initialTime: TimeOfDay.now()).then((value){
+                          setState(() {
+                            _time = value;
+                          });
+                    });
                     _character = value;
                   });
                 },
               ),
             ),
 
-            TextField(  // falta la opcion para ocultarlo si elige lo antes posible
-              keyboardType: TextInputType.datetime,
-              maxLength: 10,
-              decoration: InputDecoration(
-                filled: true,
-                labelText: "ingrese Fecha: ",
-              ),
-            ),
-
-
-            SizedBox(height: 15,),
+            Text(_dateTime.toString()),
+            Text(_time.toString()),
+            SizedBox(height: 150),
             SizedBox(
               width: getProportionateScreenWidth(190),
               child: DefaultButton(
@@ -102,6 +110,7 @@ class _BodyState extends State<Body> {
     );
   }
 }
+
 
 enum SingingCharacter { ya, otro}
 
@@ -119,3 +128,4 @@ List<String> cities = [
   "Ciudad7",
   "Ciudad8",
 ];
+
