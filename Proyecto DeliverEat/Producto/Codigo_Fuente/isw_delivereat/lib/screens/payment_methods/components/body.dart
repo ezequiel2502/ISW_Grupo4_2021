@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:isw_delivereat/components/default_button.dart';
+import 'package:isw_delivereat/screens/card_visa/card_screen.dart';
 import 'package:isw_delivereat/screens/data_screen/data_screen.dart';
 
 import '../../../constants.dart';
@@ -80,7 +81,7 @@ class _BodyState extends State<Body> {
                   child: DefaultButton(
                     text: "Tarjeta Visa",
                     press: () {
-                      Navigator.pushNamed(context, DataScreen.routeName);
+                      Navigator.pushNamed(context, CardScreen.routeName);
                     },
                   ),
                 ),

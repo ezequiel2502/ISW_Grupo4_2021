@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:isw_delivereat/screens/card_visa/card_screen.dart';
 import 'package:isw_delivereat/screens/payment_methods/payment_screen.dart';
 import 'package:isw_delivereat/screens/product_confirmation/confirmation_screen.dart';
 import 'screens/cart/cart_screen.dart';
@@ -13,6 +14,7 @@ final Map<String, WidgetBuilder> routes = {
   SplashScreen.routeName: (context) => SplashScreen(),
   CartScreen.routeName: (context) => CartScreen(),
   PaymentScreen.routeName: (context) => PaymentScreen(),
+  CardScreen.routeName: (context) => CardScreen(),
   DataScreen.routeName: (context) => DataScreen(),
   ConfirmationScreen.routeName: (context) => ConfirmationScreen(),
 };
