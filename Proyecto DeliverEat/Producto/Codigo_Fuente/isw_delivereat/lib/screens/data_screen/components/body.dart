@@ -19,6 +19,8 @@ class _BodyState extends State<Body> {
         child: ListView(
           children: [
             TextField(
+              keyboardType: TextInputType.text,
+              maxLength: 20,
               decoration: InputDecoration(
                 filled: true,
                 labelText: "Direccion (Nombre de la calle) ",
@@ -26,6 +28,8 @@ class _BodyState extends State<Body> {
             ),
             SizedBox(height: 15,),
             TextField(
+              keyboardType: TextInputType.number,
+              maxLength: 5,
               decoration: InputDecoration(
                 filled: true,
                 labelText: "Numero de la calle",
@@ -71,6 +75,16 @@ class _BodyState extends State<Body> {
                 },
               ),
             ),
+
+            TextField(  // falta la opcion para ocultarlo si elige lo antes posible
+              keyboardType: TextInputType.datetime,
+              maxLength: 10,
+              decoration: InputDecoration(
+                filled: true,
+                labelText: "ingrese Fecha: ",
+              ),
+            ),
+
 
             SizedBox(height: 15,),
             SizedBox(
