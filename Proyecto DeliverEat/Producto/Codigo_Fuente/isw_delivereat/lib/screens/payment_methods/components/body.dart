@@ -11,6 +11,7 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
+  String cantidad = "0";
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -49,7 +50,48 @@ class _BodyState extends State<Body> {
                   child: DefaultButton(
                     text: "Efectivo",
                     press: () {
-                      Navigator.pushNamed(context, DataScreen.routeName);
+                      showDialog(context: context,
+                          builder: (BuildContext context) => AlertDialog(
+                            title: Text("Debe ingresar con cuanto va a pagar:"),
+                            content: TextField(
+                              keyboardType: TextInputType.number,
+                              onChanged: (value) {
+                                setState(() {
+                                  cantidad = value;
+                                });
+                              },
+                              decoration: InputDecoration(
+                                filled: true,
+                              ),
+                            ),
+                            actions: <Widget>[
+                              FlatButton(
+                                  onPressed: (){
+                                    Navigator.of(context).pop("Ok");
+                                    int cantidadInt = int.parse(cantidad);
+                                    if(cantidadInt > 337 && cantidad != "0"){
+                                      Navigator.pushNamed(context, DataScreen.routeName);
+                                    }
+                                    else{
+                                      showDialog(context: context,
+                                          builder: (BuildContext context) => AlertDialog(
+                                            title: Text("El monto ingresado no puede ser menor al total!"),
+                                            content: Text("Vuelva a intentar."),
+                                            actions: <Widget>[
+                                              FlatButton(
+                                                  onPressed: (){
+                                                    Navigator.of(context).pop("Ok");
+                                                  },
+                                                  child: Text("Ok"))
+                                            ],
+                                          )
+                                      );
+                                    }
+                                  },
+                                  child: Text("Ok"))
+                            ],
+                          )
+                      );
                     },
                   ),
                 ),
