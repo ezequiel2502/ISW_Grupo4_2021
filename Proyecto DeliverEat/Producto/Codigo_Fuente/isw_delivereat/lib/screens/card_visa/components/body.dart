@@ -98,7 +98,10 @@ class _BodyState extends State<Body> {
               DefaultButton(
                 text: "Continuar",
                 press: () {
-                  if (nombre == "" || apellido == "" || (cvc == "" || cvc.length < 3) || (numeroT == "" || numeroT.length < 16)) {
+                  bool flag1 = false;
+                  bool flag2 = false;
+                  if (nombre == "" || apellido == "" || (cvc == "" || cvc.length < 3) || (numeroT == "" || numeroT.length < 16) || venc == "") {
+                    flag1 = true;
                     showDialog(context: context,
                         builder: (BuildContext context) =>
                             AlertDialog(
@@ -115,6 +118,7 @@ class _BodyState extends State<Body> {
                     );
                   }
                   if (numeroT[0] != "4" && numeroT.length == 16) {
+                    flag2 = true;
                     showDialog(context: context,
                         builder: (BuildContext context) =>
                             AlertDialog(
@@ -131,7 +135,7 @@ class _BodyState extends State<Body> {
                             )
                     );
                   }
-                  else {
+                  if(flag1 == false && flag2 == false){
                       Navigator.pushNamed(context, DataScreen.routeName);
                     }
                   }
@@ -142,3 +146,4 @@ class _BodyState extends State<Body> {
     );
   }
 }
+

@@ -2,6 +2,8 @@ import 'package:dropdownfield/dropdownfield.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:isw_delivereat/components/default_button.dart';
+import 'package:isw_delivereat/screens/payment_methods/components/body.dart';
+import 'package:isw_delivereat/screens/payment_methods/payment_screen.dart';
 import 'package:isw_delivereat/screens/product_confirmation/confirmation_screen.dart';
 import '../../../size_config.dart';
 
@@ -67,7 +69,6 @@ class _BodyState extends State<Body> {
               },
             ),
             SizedBox(height: 15,),
-
             ListTile(
               title: const Text('Lo antes posible'),
               leading: Radio<SingingCharacter>(

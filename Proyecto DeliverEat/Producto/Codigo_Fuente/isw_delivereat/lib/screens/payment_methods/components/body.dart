@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:isw_delivereat/components/default_button.dart';
 import 'package:isw_delivereat/screens/card_visa/card_screen.dart';
 import 'package:isw_delivereat/screens/data_screen/data_screen.dart';
-
-import '../../../constants.dart';
 import '../../../size_config.dart';
-import '../payment_screen.dart';
+
 
 class Body extends StatefulWidget {
   @override
