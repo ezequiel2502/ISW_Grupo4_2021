@@ -32,6 +32,7 @@ dependencies:
   provider: ^4.3.1 # for State management
   dropdownfield: ^1.0.3
   flutter_launcher_icons: ^0.8.0
+  credit_card_validate: 0.0.3
 
 dev_dependencies:
   flutter_test:

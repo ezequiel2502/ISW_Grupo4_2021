@@ -64,6 +64,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.1"
+  credit_card_validate:
+    dependency: "direct main"
+    description:
+      name: credit_card_validate
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.3"
   crypto:
     dependency: transitive
     description:

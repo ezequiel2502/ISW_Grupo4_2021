@@ -3,6 +3,7 @@ import 'package:isw_delivereat/components/default_button.dart';
 import 'package:isw_delivereat/screens/data_screen/data_screen.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
+import 'package:credit_card_validate/credit_card_validate.dart';
 
 class Body extends StatefulWidget {
   @override
@@ -15,7 +16,6 @@ class _BodyState extends State<Body> {
   String numeroT = "";
   String venc = "";
   String cvc = "";
-
 
   @override
   Widget build(BuildContext context) {
@@ -100,6 +100,7 @@ class _BodyState extends State<Body> {
                 press: () {
                   bool flag1 = false;
                   bool flag2 = false;
+                  bool flag3 = false;
                   if (nombre == "" || apellido == "" || (cvc == "" || cvc.length < 3) || (numeroT == "" || numeroT.length < 16) || venc == "") {
                     flag1 = true;
                     showDialog(context: context,
@@ -135,7 +136,23 @@ class _BodyState extends State<Body> {
                             )
                     );
                   }
-                  if(flag1 == false && flag2 == false){
+                  if(CreditCardValidator.isCreditCardValid(cardNumber: numeroT) == false){
+                    flag3 = true;
+                    showDialog(context: context,
+                        builder: (BuildContext context) =>
+                            AlertDialog(
+                              title: Text("El numero de tu tarjeta de credito no es valido."),
+                              actions: <Widget>[
+                                FlatButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop("Ok");
+                                    },
+                                    child: Text("Ok"))
+                              ],
+                            )
+                    );
+                  }
+                  if(flag1 == false && flag2 == false && flag3 == false){
                       Navigator.pushNamed(context, DataScreen.routeName);
                     }
                   }
