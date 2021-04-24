@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:isw_delivereat/components/default_button.dart';
 import 'package:isw_delivereat/screens/data_screen/data_screen.dart';
-
 import '../../../constants.dart';
 import '../../../size_config.dart';
 
@@ -85,7 +84,7 @@ class _BodyState extends State<Body> {
 
               TextField(
                 keyboardType: TextInputType.datetime,
-                maxLength: 4,
+                maxLength: 3,
                 onChanged: (value) {
                   setState(() {
                     cvc = value;
@@ -99,11 +98,11 @@ class _BodyState extends State<Body> {
               DefaultButton(
                 text: "Continuar",
                 press: () {
-                  if (nombre == "" || apellido == "") {
+                  if (nombre == "" || apellido == "" || (cvc == "" || cvc.length < 3) || (numeroT == "" || numeroT.length < 16)) {
                     showDialog(context: context,
                         builder: (BuildContext context) =>
                             AlertDialog(
-                              title: Text("No puede dejar campos vacios!"),
+                              title: Text("No puede dejar campos vacios o incompletos!"),
                               content: Text("Vuelva a intentar."),
                               actions: <Widget>[
                                 FlatButton(
@@ -115,63 +114,27 @@ class _BodyState extends State<Body> {
                             )
                     );
                   }
-                  if (numeroT == "" || numeroT.length < 16) {
-                    if (numeroT[0] != "4" && numeroT.length == 16) {
-                      showDialog(context: context,
-                          builder: (BuildContext context) =>
-                              AlertDialog(
-                                title: Text(
-                                    "La tarjeta que usted ingreso no es VISA!"),
-                                content: Text("Vuelva a intentar."),
-                                actions: <Widget>[
-                                  FlatButton(
-                                      onPressed: () {
-                                        Navigator.of(context).pop("Ok");
-                                      },
-                                      child: Text("Ok"))
-                                ],
-                              )
-                      );
-                    }
-                    else {
-                      showDialog(context: context,
-                          builder: (BuildContext context) =>
-                              AlertDialog(
-                                title: Text(
-                                    "El numero de tarjeta esta vacio o incompleto!"),
-                                content: Text("Vuelva a intentar."),
-                                actions: <Widget>[
-                                  FlatButton(
-                                      onPressed: () {
-                                        Navigator.of(context).pop("Ok");
-                                      },
-                                      child: Text("Ok"))
-                                ],
-                              )
-                      );
-                    }
-                    if (cvc == "" || numeroT.length < 3) {
-                      showDialog(context: context,
-                          builder: (BuildContext context) =>
-                              AlertDialog(
-                                title: Text(
-                                    "El codigo de seguridad esta vacio o incompleto!"),
-                                content: Text("Vuelva a intentar."),
-                                actions: <Widget>[
-                                  FlatButton(
-                                      onPressed: () {
-                                        Navigator.of(context).pop("Ok");
-                                      },
-                                      child: Text("Ok"))
-                                ],
-                              )
-                      );
-                    }
-                    else {
+                  if (numeroT[0] != "4" && numeroT.length == 16) {
+                    showDialog(context: context,
+                        builder: (BuildContext context) =>
+                            AlertDialog(
+                              title: Text(
+                                  "La tarjeta que usted ingreso no es VISA!"),
+                              content: Text("Vuelva a intentar."),
+                              actions: <Widget>[
+                                FlatButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop("Ok");
+                                    },
+                                    child: Text("Ok"))
+                              ],
+                            )
+                    );
+                  }
+                  else {
                       Navigator.pushNamed(context, DataScreen.routeName);
                     }
-                  };
-                }
+                  }
               )
             ],
         ),
