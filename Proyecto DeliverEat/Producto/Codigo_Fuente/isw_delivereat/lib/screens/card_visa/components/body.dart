@@ -11,6 +11,13 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
+  String nombre = "";
+  String apellido = "";
+  String numeroT = "";
+  String venc = "";
+  String cvc = "";
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,6 +31,11 @@ class _BodyState extends State<Body> {
               ),
               TextField(
                 keyboardType: TextInputType.text,
+                onChanged: (value) {
+                  setState(() {
+                    nombre = value;
+                  });
+                },
                 decoration: InputDecoration(
                   filled: true,
                   labelText: "Nombre",
@@ -32,6 +44,11 @@ class _BodyState extends State<Body> {
               SizedBox(height: 20,),
               TextField(
                 keyboardType: TextInputType.text,
+                onChanged: (value) {
+                  setState(() {
+                    apellido = value;
+                  });
+                },
                 decoration: InputDecoration(
                   filled: true,
                   labelText: "Apellido",
@@ -41,6 +58,11 @@ class _BodyState extends State<Body> {
               TextField(
                 keyboardType: TextInputType.number,
                 maxLength: 16,
+                onChanged: (value) {
+                  setState(() {
+                    numeroT = value;
+                  });
+                },
                 decoration: InputDecoration(
                   filled: true,
                   labelText: "Numero de la tarjeta",
@@ -50,6 +72,11 @@ class _BodyState extends State<Body> {
               TextField(
                 keyboardType: TextInputType.datetime,
                 maxLength: 7,
+                onChanged: (value) {
+                  setState(() {
+                    venc = value;
+                  });
+                },
                 decoration: InputDecoration(
                   filled: true,
                   labelText: "Fecha de vencimiento",
@@ -59,6 +86,11 @@ class _BodyState extends State<Body> {
               TextField(
                 keyboardType: TextInputType.datetime,
                 maxLength: 4,
+                onChanged: (value) {
+                  setState(() {
+                    cvc = value;
+                  });
+                },
                 decoration: InputDecoration(
                   filled: true,
                   labelText: "Codigo de seguridad",
@@ -67,9 +99,80 @@ class _BodyState extends State<Body> {
               DefaultButton(
                 text: "Continuar",
                 press: () {
-                  Navigator.pushNamed(context, DataScreen.routeName);
-                },
-              ),
+                  if (nombre == "" || apellido == "") {
+                    showDialog(context: context,
+                        builder: (BuildContext context) =>
+                            AlertDialog(
+                              title: Text("No puede dejar campos vacios!"),
+                              content: Text("Vuelva a intentar."),
+                              actions: <Widget>[
+                                FlatButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop("Ok");
+                                    },
+                                    child: Text("Ok"))
+                              ],
+                            )
+                    );
+                  }
+                  if (numeroT == "" || numeroT.length < 16) {
+                    if (numeroT[0] != "4" && numeroT.length == 16) {
+                      showDialog(context: context,
+                          builder: (BuildContext context) =>
+                              AlertDialog(
+                                title: Text(
+                                    "La tarjeta que usted ingreso no es VISA!"),
+                                content: Text("Vuelva a intentar."),
+                                actions: <Widget>[
+                                  FlatButton(
+                                      onPressed: () {
+                                        Navigator.of(context).pop("Ok");
+                                      },
+                                      child: Text("Ok"))
+                                ],
+                              )
+                      );
+                    }
+                    else {
+                      showDialog(context: context,
+                          builder: (BuildContext context) =>
+                              AlertDialog(
+                                title: Text(
+                                    "El numero de tarjeta esta vacio o incompleto!"),
+                                content: Text("Vuelva a intentar."),
+                                actions: <Widget>[
+                                  FlatButton(
+                                      onPressed: () {
+                                        Navigator.of(context).pop("Ok");
+                                      },
+                                      child: Text("Ok"))
+                                ],
+                              )
+                      );
+                    }
+                    if (cvc == "" || numeroT.length < 3) {
+                      showDialog(context: context,
+                          builder: (BuildContext context) =>
+                              AlertDialog(
+                                title: Text(
+                                    "El codigo de seguridad esta vacio o incompleto!"),
+                                content: Text("Vuelva a intentar."),
+                                actions: <Widget>[
+                                  FlatButton(
+                                      onPressed: () {
+                                        Navigator.of(context).pop("Ok");
+                                      },
+                                      child: Text("Ok"))
+                                ],
+                              )
+                      );
+                    }
+                    else {
+                      Navigator.pushNamed(context, DataScreen.routeName);
+                    }
+                  };
+                }
+              )
             ],
         ),
       ),
