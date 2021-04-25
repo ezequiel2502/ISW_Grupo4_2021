@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../constants.dart';
 import '../size_config.dart';
@@ -23,10 +24,10 @@ class DefaultButton extends StatelessWidget {
         onPressed: press,
         child: Text(
           text,
-          style: TextStyle(
+          style: GoogleFonts.openSans(textStyle: TextStyle(
             fontSize: getProportionateScreenWidth(18),
             color: Colors.white,
-          ),
+          ))
         ),
       ),
     );
