@@ -26,7 +26,7 @@ class _BodyState extends State<Body> {
           children: [
             TextField(
               keyboardType: TextInputType.text,
-              maxLength: 25,
+              maxLength: 255,
               onChanged: (value) {
                 setState(() {
                   direccion = value;
@@ -40,7 +40,7 @@ class _BodyState extends State<Body> {
             SizedBox(height: 15,),
             TextField(
               keyboardType: TextInputType.number,
-              maxLength: 5,
+              maxLength: 10,
               onChanged: (value) {
                 setState(() {
                   numero = value;
@@ -65,6 +65,21 @@ class _BodyState extends State<Body> {
                   ciudad = value;
                 });
               },
+            ),
+            SizedBox(height: 30,),
+            TextField(
+              keyboardType: TextInputType.text,
+              maxLength: 255,
+              onChanged: (value) {
+                setState(() {
+                  numero = value;
+                });
+              },
+              decoration: InputDecoration(
+                hintText: "Opcional",
+                filled: true,
+                labelText: "Referencia",
+              ),
             ),
             SizedBox(height: 15,),
             ListTile(
@@ -160,12 +175,7 @@ final citiesSelected = TextEditingController();
 
 List<String> cities = [
   "Cordoba",
-  "Ciudad2",
-  "Ciudad3",
-  "Ciudad4",
-  "Ciudad5",
-  "Ciudad6",
-  "Ciudad7",
-  "Ciudad8",
+  "Rio Ceballos",
+  "Unquillo",
 ];
 

@@ -12,7 +12,6 @@ class Body extends StatefulWidget {
 
 class _BodyState extends State<Body> {
   String nombre = "";
-  String apellido = "";
   String numeroT = "";
   String venc = "";
   String cvc = "";
@@ -36,25 +35,10 @@ class _BodyState extends State<Body> {
               },
               decoration: InputDecoration(
                 filled: true,
-                labelText: "Nombre",
+                labelText: "Nombre y apellido",
               ),
             ),
             SizedBox(height: 20,),
-            TextField(
-              keyboardType: TextInputType.text,
-              onChanged: (value) {
-                setState(() {
-                  apellido = value;
-                });
-              },
-              decoration: InputDecoration(
-                filled: true,
-                labelText: "Apellido",
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
             TextField(
               keyboardType: TextInputType.number,
               maxLength: 16,
@@ -104,7 +88,7 @@ class _BodyState extends State<Body> {
                   bool flag1 = false;
                   bool flag2 = false;
                   bool flag3 = false;
-                  if (nombre == "" || apellido == "" || (cvc == "" || cvc.length < 3) || (numeroT == "" || numeroT.length < 16) || venc == "") {
+                  if (nombre == "" || (cvc == "" || cvc.length < 3) || (numeroT == "" || numeroT.length < 16) || venc == "") {
                     flag1 = true;
                     showDialog(
                         context: context,

@@ -31,7 +31,7 @@ List<Product> demoProducts = [
       Colors.white,
     ],
     title: "McPollo",
-    price: 64.99,
+    price: 92.17,
   ),
   Product(
     id: 2,
@@ -45,7 +45,7 @@ List<Product> demoProducts = [
       Colors.white,
     ],
     title: "Papas grandes",
-    price: 50.5,
+    price: 70.81,
   ),
   Product(
     id: 3,
@@ -58,8 +58,8 @@ List<Product> demoProducts = [
       Color(0xFFDECB9C),
       Colors.white,
     ],
-    title: "Gloves XC Omega - Polygon",
-    price: 36.55,
+    title: "Test",
+    price: 82,
   ),
   Product(
     id: 4,
@@ -73,7 +73,7 @@ List<Product> demoProducts = [
       Colors.white,
     ],
     title: "Coca cola",
-    price: 20.20,
+    price: 82,
   ),
 ];
 

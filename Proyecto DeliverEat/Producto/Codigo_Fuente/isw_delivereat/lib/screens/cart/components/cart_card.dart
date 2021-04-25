@@ -50,9 +50,9 @@ class CartCard extends StatelessWidget {
                       style: Theme.of(context).textTheme.bodyText1),
                 ],
               ),
-            )
+            ),
           ],
-        )
+        ),
       ],
     );
   }

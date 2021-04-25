@@ -62,6 +62,7 @@ class _BodyState extends State<Body> {
                               },
                               decoration: InputDecoration(
                                 filled: true,
+                                hintText: "\$"
                               ),
                             ),
                             actions: <Widget>[
@@ -69,10 +70,25 @@ class _BodyState extends State<Body> {
                                   onPressed: (){
                                     Navigator.of(context).pop("Ok");
                                     int cantidadInt = int.parse(cantidad);
-                                    if(cantidadInt > 337 && cantidad != "0"){
+                                    if(cantidadInt > 437 && cantidad != "0" && cantidadInt < 999999){
                                       Navigator.pushNamed(context, DataScreen.routeName);
                                     }
-                                    else{
+                                    if(cantidadInt > 999999){
+                                      showDialog(context: context,
+                                          builder: (BuildContext context) => AlertDialog(
+                                            title: Text("El monto ingresado es demasiado grande!"),
+                                            content: Text("Vuelva a intentar."),
+                                            actions: <Widget>[
+                                              FlatButton(
+                                                  onPressed: (){
+                                                    Navigator.of(context).pop("Ok");
+                                                  },
+                                                  child: Text("Ok"))
+                                            ],
+                                          )
+                                      );
+                                    }
+                                    if(cantidadInt < 437){
                                       showDialog(context: context,
                                           builder: (BuildContext context) => AlertDialog(
                                             title: Text("El monto ingresado no puede ser menor al total!"),
