@@ -108,17 +108,12 @@ class _BodyState extends State<Body> {
                   bool flag1 = false;
                   bool flag2 = false;
                   bool flag3 = false;
-                  if (nombre == "" ||
-                      apellido == "" ||
-                      (cvc == "" || cvc.length < 3) ||
-                      (numeroT == "" || numeroT.length < 16) ||
-                      venc == "") {
+                  if (nombre == "" || apellido == "" || (cvc == "" || cvc.length < 3) || (numeroT == "" || numeroT.length < 16) || venc == "") {
                     flag1 = true;
                     showDialog(
                         context: context,
                         builder: (BuildContext context) => AlertDialog(
-                              title: Text(
-                                  "No puede dejar campos vacios o incompletos!"),
+                              title: Text("No puede dejar campos vacios o incompletos!"),
                               content: Text("Vuelva a intentar."),
                               actions: <Widget>[
                                 FlatButton(
@@ -134,8 +129,7 @@ class _BodyState extends State<Body> {
                     showDialog(
                         context: context,
                         builder: (BuildContext context) => AlertDialog(
-                              title: Text(
-                                  "La tarjeta que usted ingreso no es VISA!"),
+                              title: Text("La tarjeta que usted ingreso no es VISA!"),
                               content: Text("Vuelva a intentar."),
                               actions: <Widget>[
                                 FlatButton(
@@ -146,15 +140,13 @@ class _BodyState extends State<Body> {
                               ],
                             ));
                   }
-                  if (CreditCardValidator.isCreditCardValid(
-                          cardNumber: numeroT) ==
-                      false) {
+                  if (CreditCardValidator.isCreditCardValid(cardNumber: numeroT) == false && numeroT.length == 16) {
                     flag3 = true;
                     showDialog(
                         context: context,
                         builder: (BuildContext context) => AlertDialog(
-                              title: Text(
-                                  "El numero de tu tarjeta de credito no es valido."),
+                              title: Text("El numero de tu tarjeta de credito no es valido."),
+                              content: Text("Vuelva a intentar."),
                               actions: <Widget>[
                                 FlatButton(
                                     onPressed: () {
