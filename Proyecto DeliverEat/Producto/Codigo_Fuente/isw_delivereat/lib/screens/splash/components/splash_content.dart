@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -18,11 +19,11 @@ class SplashContent extends StatelessWidget {
         Spacer(),
         Text(
           "DeliverEat",
-          style: TextStyle(
+          style: GoogleFonts.openSans(textStyle: TextStyle(
             fontSize: getProportionateScreenWidth(36),
             color: kPrimaryColor,
             fontWeight: FontWeight.bold,
-          ),
+          ))
         ),
         Text(
           text,

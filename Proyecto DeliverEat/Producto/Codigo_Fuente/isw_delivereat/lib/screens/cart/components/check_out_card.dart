@@ -5,6 +5,7 @@ import '../../../components/default_button.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
 import '../../data_screen/data_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CheckoutCard extends StatelessWidget {
   const CheckoutCard({
@@ -51,7 +52,7 @@ class CheckoutCard extends StatelessWidget {
                   child: SvgPicture.asset("assets/icons/receipt.svg"),
                 ),
                 Spacer(),
-                Text("Añadir codigo de descuento"),
+                Text("Añadir codigo de descuento", style: GoogleFonts.openSans(),),
                 const SizedBox(width: 10),
                 Icon(
                   Icons.arrow_forward_ios,
@@ -70,7 +71,7 @@ class CheckoutCard extends StatelessWidget {
                     children: [
                       TextSpan(
                         text: "\$437.15",
-                        style: TextStyle(fontSize: 16, color: Colors.black),
+                        style: GoogleFonts.openSans(textStyle:TextStyle(fontSize: 16,color: Colors.black) ),
                       ),
                     ],
                   ),

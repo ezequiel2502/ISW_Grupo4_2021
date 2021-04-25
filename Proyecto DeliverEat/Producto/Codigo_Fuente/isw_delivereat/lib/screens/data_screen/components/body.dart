@@ -1,9 +1,11 @@
 import 'package:dropdownfield/dropdownfield.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:isw_delivereat/components/default_button.dart';
 import 'package:isw_delivereat/screens/product_confirmation/confirmation_screen.dart';
 import '../../../size_config.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Body extends StatefulWidget {
   @override
@@ -33,6 +35,7 @@ class _BodyState extends State<Body> {
                 });
               },
               decoration: InputDecoration(
+                labelStyle: GoogleFonts.openSans(),
                 filled: true,
                 labelText: "Direccion (Nombre de la calle) ",
               ),
@@ -47,6 +50,7 @@ class _BodyState extends State<Body> {
                 });
               },
               decoration: InputDecoration(
+                labelStyle: GoogleFonts.openSans(),
                 filled: true,
                 labelText: "Numero de la calle",
               ),
@@ -56,6 +60,8 @@ class _BodyState extends State<Body> {
               controller: citiesSelected,
               labelText: "Ciudad",
               hintText: "Ingresar ciudad",
+              labelStyle: GoogleFonts.openSans(),
+              hintStyle: GoogleFonts.openSans(),
               enabled: true,
               itemsVisibleInDropdown: 5,
               items: cities,
@@ -76,6 +82,8 @@ class _BodyState extends State<Body> {
                 });
               },
               decoration: InputDecoration(
+                labelStyle: GoogleFonts.openSans(),
+                hintStyle: GoogleFonts.openSans(),
                 hintText: "Opcional",
                 filled: true,
                 labelText: "Referencia",
@@ -83,7 +91,7 @@ class _BodyState extends State<Body> {
             ),
             SizedBox(height: 15,),
             ListTile(
-              title: const Text('Lo antes posible'),
+              title: Text('Lo antes posible', style: GoogleFonts.openSans(),),
               leading: Radio<SingingCharacter>(
                 value: SingingCharacter.ya,
                 groupValue: _character,
@@ -95,7 +103,7 @@ class _BodyState extends State<Body> {
               ),
             ),
             ListTile(
-              title: const Text('Otro dia/horario'),
+              title:  Text('Otro dia/horario',style: GoogleFonts.openSans(),),
               leading: Radio<SingingCharacter>(
                 value: SingingCharacter.otro,
                 groupValue: _character,

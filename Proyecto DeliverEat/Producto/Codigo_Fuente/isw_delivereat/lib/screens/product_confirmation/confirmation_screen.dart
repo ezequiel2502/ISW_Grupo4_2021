@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'package:isw_delivereat/screens/product_confirmation/components/body.dart';
 
@@ -10,7 +11,7 @@ class ConfirmationScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: SizedBox(),
-        title: Text("Pedido recibido"),
+        title: Text("Pedido recibido", style: GoogleFonts.openSans(),),
       ),
       body: Body(),
     );

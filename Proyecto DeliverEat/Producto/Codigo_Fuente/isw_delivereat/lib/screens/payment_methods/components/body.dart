@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:isw_delivereat/components/default_button.dart';
 import 'package:isw_delivereat/screens/card_visa/card_screen.dart';
 import 'package:isw_delivereat/screens/data_screen/data_screen.dart';
@@ -52,15 +53,17 @@ class _BodyState extends State<Body> {
                     press: () {
                       showDialog(context: context,
                           builder: (BuildContext context) => AlertDialog(
-                            title: Text("Debe ingresar con cuanto va a pagar:"),
+                            title: Text("Debe ingresar con cuanto va a pagar:",style: GoogleFonts.openSans(),),
                             content: TextField(
                               keyboardType: TextInputType.number,
+                              style: GoogleFonts.openSans(),
                               onChanged: (value) {
                                 setState(() {
                                   cantidad = value;
                                 });
                               },
                               decoration: InputDecoration(
+                                labelStyle: GoogleFonts.openSans(),
                                 filled: true,
                                 hintText: "\$"
                               ),
@@ -76,14 +79,14 @@ class _BodyState extends State<Body> {
                                     if(cantidadInt > 999999){
                                       showDialog(context: context,
                                           builder: (BuildContext context) => AlertDialog(
-                                            title: Text("El monto ingresado es demasiado grande!"),
-                                            content: Text("Vuelva a intentar."),
+                                            title: Text("El monto ingresado es demasiado grande!", style: GoogleFonts.openSans(),),
+                                            content: Text("Vuelva a intentar.", style: GoogleFonts.openSans(),),
                                             actions: <Widget>[
                                               FlatButton(
                                                   onPressed: (){
-                                                    Navigator.of(context).pop("Ok");
+                                                    Navigator.of(context).pop("Ok",);
                                                   },
-                                                  child: Text("Ok"))
+                                                  child: Text("Ok",style: GoogleFonts.openSans()))
                                             ],
                                           )
                                       );
@@ -91,20 +94,20 @@ class _BodyState extends State<Body> {
                                     if(cantidadInt < 437){
                                       showDialog(context: context,
                                           builder: (BuildContext context) => AlertDialog(
-                                            title: Text("El monto ingresado no puede ser menor al total!"),
-                                            content: Text("Vuelva a intentar."),
+                                            title: Text("El monto ingresado no puede ser menor al total!",style: GoogleFonts.openSans()),
+                                            content: Text("Vuelva a intentar.",style: GoogleFonts.openSans(),),
                                             actions: <Widget>[
                                               FlatButton(
                                                   onPressed: (){
                                                     Navigator.of(context).pop("Ok");
                                                   },
-                                                  child: Text("Ok"))
+                                                  child: Text("Ok",style: GoogleFonts.openSans(),))
                                             ],
                                           )
                                       );
                                     }
                                   },
-                                  child: Text("Ok"))
+                                  child: Text("Ok",style: GoogleFonts.openSans(),))
                             ],
                           )
                       );

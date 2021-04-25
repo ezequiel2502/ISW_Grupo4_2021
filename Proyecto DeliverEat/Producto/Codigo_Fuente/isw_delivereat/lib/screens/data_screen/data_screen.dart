@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'components/body.dart';
 
 class DataScreen extends StatelessWidget {
@@ -12,11 +13,11 @@ class DataScreen extends StatelessWidget {
           children: [
             Text(
               "Ingresa tus datos",
-              style: TextStyle(color: Colors.black),
+              style: GoogleFonts.openSans(textStyle: TextStyle(color: Colors.black)),
             ),
             Text(
               "Ultimo paso!",
-              style: Theme.of(context).textTheme.caption,
+              style: GoogleFonts.openSans(textStyle: Theme.of(context).textTheme.caption),
             ),
           ],
         ),

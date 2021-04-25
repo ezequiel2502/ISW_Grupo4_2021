@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:isw_delivereat/components/default_button.dart';
 import 'package:isw_delivereat/components/moving_card_widget.dart';
 import 'package:isw_delivereat/screens/data_screen/data_screen.dart';
@@ -34,6 +35,7 @@ class _BodyState extends State<Body> {
                 });
               },
               decoration: InputDecoration(
+                labelStyle: GoogleFonts.openSans(),
                 filled: true,
                 labelText: "Nombre y apellido",
               ),
@@ -48,11 +50,13 @@ class _BodyState extends State<Body> {
                 });
               },
               decoration: InputDecoration(
+                labelStyle: GoogleFonts.openSans(),
                 filled: true,
                 labelText: "Numero de la tarjeta",
               ),
             ),
             TextField(
+              style: GoogleFonts.openSans(),
               inputFormatters: [
                 MaskedTextInputFormatterShifter(
                     maskONE: "XX/XX", maskTWO: "XX/XX"),
@@ -65,6 +69,7 @@ class _BodyState extends State<Body> {
                 });
               },
               decoration: InputDecoration(
+                labelStyle: GoogleFonts.openSans(),
                 filled: true,
                 labelText: "Fecha de vencimiento",
               ),
@@ -78,6 +83,7 @@ class _BodyState extends State<Body> {
                 });
               },
               decoration: InputDecoration(
+                labelStyle: GoogleFonts.openSans(),
                 filled: true,
                 labelText: "Codigo de seguridad",
               ),
@@ -93,14 +99,14 @@ class _BodyState extends State<Body> {
                     showDialog(
                         context: context,
                         builder: (BuildContext context) => AlertDialog(
-                              title: Text("No puede dejar campos vacios o incompletos!"),
-                              content: Text("Vuelva a intentar."),
+                              title: Text("No puede dejar campos vacios o incompletos!", style: GoogleFonts.openSans(),),
+                              content: Text("Vuelva a intentar.",style: GoogleFonts.openSans(),),
                               actions: <Widget>[
                                 FlatButton(
                                     onPressed: () {
                                       Navigator.of(context).pop("Ok");
                                     },
-                                    child: Text("Ok"))
+                                    child: Text("Ok", style: GoogleFonts.openSans(),))
                               ],
                             ));
                   }
@@ -109,14 +115,14 @@ class _BodyState extends State<Body> {
                     showDialog(
                         context: context,
                         builder: (BuildContext context) => AlertDialog(
-                              title: Text("La tarjeta que usted ingreso no es VISA!"),
-                              content: Text("Vuelva a intentar."),
+                              title: Text("La tarjeta que usted ingreso no es VISA!", style: GoogleFonts.openSans(),),
+                              content: Text("Vuelva a intentar.", style: GoogleFonts.openSans(),),
                               actions: <Widget>[
                                 FlatButton(
                                     onPressed: () {
                                       Navigator.of(context).pop("Ok");
                                     },
-                                    child: Text("Ok"))
+                                    child: Text("Ok", style: GoogleFonts.openSans(),))
                               ],
                             ));
                   }
@@ -125,14 +131,14 @@ class _BodyState extends State<Body> {
                     showDialog(
                         context: context,
                         builder: (BuildContext context) => AlertDialog(
-                              title: Text("El numero de tu tarjeta de credito no es valido."),
-                              content: Text("Vuelva a intentar."),
+                              title: Text("El numero de tu tarjeta de credito no es valido.", style: GoogleFonts.openSans(),),
+                              content: Text("Vuelva a intentar.", style: GoogleFonts.openSans(),),
                               actions: <Widget>[
                                 FlatButton(
                                     onPressed: () {
                                       Navigator.of(context).pop("Ok");
                                     },
-                                    child: Text("Ok"))
+                                    child: Text("Ok", style: GoogleFonts.openSans(),))
                               ],
                             ));
                   }

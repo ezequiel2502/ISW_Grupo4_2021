@@ -35,6 +35,7 @@ dependencies:
   mask_shifter: ^0.1.0
   credit_card_validate: 0.0.3
   flutter_sequence_animation: ^3.0.1
+  google_fonts: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -74,14 +75,13 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Muli
+    - family: OpenSans
       fonts:
-        - asset: assets/fonts/muli/Muli.ttf
-        - asset: assets/fonts/muli/Muli-Bold.ttf
+        - asset: assets/fonts/Open_Sans/OpenSans-Regular.ttf
+        - asset: assets/fonts/Open_Sans/OpenSans-Bold.ttf
           weight: 700
-        - asset: assets/fonts/muli/Muli-Light.ttf
+        - asset: assets/fonts/Open_Sans/OpenSans-Light.ttf
           weight: 300
-
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

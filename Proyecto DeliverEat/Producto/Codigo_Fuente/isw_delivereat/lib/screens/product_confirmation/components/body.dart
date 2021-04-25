@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:isw_delivereat/components/default_button.dart';
 
 import '../../../constants.dart';
@@ -22,11 +23,11 @@ class _BodyState extends State<Body> {
         SizedBox(height: SizeConfig.screenHeight * 0.08),
         Text(
           "               Muchas gracias! \nRecibimos tu pedido correctamente.",
-          style: TextStyle(
+          style: GoogleFonts.openSans(textStyle: TextStyle(
             fontSize: getProportionateScreenWidth(20),
             color: kPrimaryColor,
             fontWeight: FontWeight.bold,
-          ),
+          )),
         ),
         Spacer(),
         SizedBox(

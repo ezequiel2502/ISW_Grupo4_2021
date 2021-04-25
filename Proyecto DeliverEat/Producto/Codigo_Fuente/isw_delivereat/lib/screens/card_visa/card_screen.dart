@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:isw_delivereat/screens/card_visa/components/body.dart';
 
 class CardScreen extends StatelessWidget {
@@ -13,7 +14,7 @@ class CardScreen extends StatelessWidget {
           children: [
             Text(
               "Ingresa los datos de tu tarjeta",
-              style: TextStyle(color: Colors.black),
+              style: GoogleFonts.openSans(textStyle:TextStyle(color: Colors.black)),
             ),
           ],
         ),

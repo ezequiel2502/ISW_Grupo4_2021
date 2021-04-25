@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../../models/Cart.dart';
 import 'components/body.dart';
 import 'components/check_out_card.dart';
@@ -20,11 +21,11 @@ class CartScreen extends StatelessWidget {
         children: [
           Text(
             "Tu carrito",
-            style: TextStyle(color: Colors.black),
+            style: GoogleFonts.openSans(textStyle: TextStyle(color: Colors.black)),
           ),
           Text(
             "${demoCarts.length} items",
-            style: Theme.of(context).textTheme.caption,
+            style: GoogleFonts.openSans(textStyle: Theme.of(context).textTheme.caption),
           ),
         ],
       ),
