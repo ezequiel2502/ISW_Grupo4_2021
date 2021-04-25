@@ -34,6 +34,7 @@ dependencies:
   flutter_launcher_icons: ^0.8.0
   mask_shifter: ^0.1.0
   credit_card_validate: 0.0.3
+  flutter_sequence_animation: ^3.0.1
 
 dev_dependencies:
   flutter_test:

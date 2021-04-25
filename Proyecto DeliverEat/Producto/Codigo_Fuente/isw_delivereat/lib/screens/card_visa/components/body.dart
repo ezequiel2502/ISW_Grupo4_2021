@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:isw_delivereat/components/default_button.dart';
+import 'package:isw_delivereat/components/moving_card_widget.dart';
 import 'package:isw_delivereat/screens/data_screen/data_screen.dart';
 import 'package:mask_shifter/mask_shifter.dart';
-import '../../../constants.dart';
-import '../../../size_config.dart';
 import 'package:credit_card_validate/credit_card_validate.dart';
 
 class Body extends StatefulWidget {
@@ -18,6 +17,7 @@ class _BodyState extends State<Body> {
   String venc = "";
   String cvc = "";
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,10 +25,8 @@ class _BodyState extends State<Body> {
         padding: EdgeInsets.all(20),
         child: ListView(
           children: [
-            Image.asset(
-              "assets/images/front_card.png",
-              height: SizeConfig.screenHeight * 0.4, //40%
-            ),
+            MovingCardWidget(urlFront: "assets/images/front_card.png", urlBack: "assets/images/back_card.png"),
+            SizedBox(height: 15,),
             TextField(
               keyboardType: TextInputType.text,
               onChanged: (value) {
@@ -41,9 +39,7 @@ class _BodyState extends State<Body> {
                 labelText: "Nombre",
               ),
             ),
-            SizedBox(
-              height: 20,
-            ),
+            SizedBox(height: 20,),
             TextField(
               keyboardType: TextInputType.text,
               onChanged: (value) {
