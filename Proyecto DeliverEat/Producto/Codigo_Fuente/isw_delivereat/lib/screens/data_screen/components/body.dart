@@ -5,7 +5,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:isw_delivereat/components/default_button.dart';
 import 'package:isw_delivereat/screens/product_confirmation/confirmation_screen.dart';
 import '../../../size_config.dart';
-import 'package:assets_audio_player/assets_audio_player.dart';
 
 class Body extends StatefulWidget {
   @override
