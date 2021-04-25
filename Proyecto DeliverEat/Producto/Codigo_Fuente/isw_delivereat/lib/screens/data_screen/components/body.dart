@@ -26,6 +26,7 @@ class _BodyState extends State<Body> {
         padding: EdgeInsets.all(20),
         child: ListView(
           children: [
+            SizedBox(height: 15,),
             TextField(
               keyboardType: TextInputType.text,
               maxLength: 255,
@@ -131,7 +132,7 @@ class _BodyState extends State<Body> {
 
             Text(_dateTime.toString()),
             Text(_time.toString()),
-            SizedBox(height: 150),
+            SizedBox(height: 50),
             SizedBox(
               width: getProportionateScreenWidth(190),
               child: DefaultButton(
