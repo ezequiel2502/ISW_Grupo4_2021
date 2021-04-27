@@ -153,18 +153,17 @@ class _BodyState extends State<Body> {
                       continue;
                     }
                   }
-                  if(_dateTime == null && _time == null){
-                    _dateTime = DateTime.now().add(Duration(hours: 1));
-                  } else{
-                    _dateTime = _dateTime.add(Duration(hours:1));
-                  }
+
 
                   if(flag == true){
                     Navigator.push(context, MaterialPageRoute(
                         builder: (context) => OrderScreen(text:
-                            "Dirección de entrega: " + direccion + ", " + numero +
+                            "Dirección de entrega: " + direccion +
+                                "\nnumero: " + numero +
                             "\nCiudad: " + ciudad +
-                            "\nFecha y hora estimada de entrega: " + day.toString() + ", " + hour.toString()
+                            "\nFecha de entrega: " +mostrarFecha(diaEntrega, _dateTime.toString()) +
+                                "\nHora de entrega estimada: " + mostrarTiempo(tiempoEntrega,_time.toString()) +
+                            "\n Productos: McPollo - Papas grandes - Coca cola "
                         )
                     ));
                     // Navigator.pushNamed(context, ConfirmationScreen.routeName);
