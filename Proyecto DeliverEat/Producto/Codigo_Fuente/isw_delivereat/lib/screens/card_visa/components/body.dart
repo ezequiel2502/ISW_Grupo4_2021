@@ -17,7 +17,6 @@ class _BodyState extends State<Body> {
   String venc = "";
   String cvc = "";
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,8 +24,12 @@ class _BodyState extends State<Body> {
         padding: EdgeInsets.all(20),
         child: ListView(
           children: [
-            MovingCardWidget(urlFront: "assets/images/front_card.png", urlBack: "assets/images/back_card.png"),
-            SizedBox(height: 15,),
+            MovingCardWidget(
+                urlFront: "assets/images/front_card.png",
+                urlBack: "assets/images/back_card.png"),
+            SizedBox(
+              height: 15,
+            ),
             TextField(
               keyboardType: TextInputType.text,
               onChanged: (value) {
@@ -40,7 +43,9 @@ class _BodyState extends State<Body> {
                 labelText: "Nombre y apellido",
               ),
             ),
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             TextField(
               keyboardType: TextInputType.number,
               maxLength: 16,
@@ -94,19 +99,31 @@ class _BodyState extends State<Body> {
                   bool flag1 = false;
                   bool flag2 = false;
                   bool flag3 = false;
-                  if (nombre == "" || (cvc == "" || cvc.length < 3) || (numeroT == "" || numeroT.length < 16) || venc == "") {
+                  if (nombre == "" ||
+                      (cvc == "" || cvc.length < 3) ||
+                      (numeroT == "" || numeroT.length < 16) ||
+                      venc == "") {
                     flag1 = true;
                     showDialog(
                         context: context,
                         builder: (BuildContext context) => AlertDialog(
-                              title: Text("No puede dejar campos vacios o incompletos!", style: GoogleFonts.openSans(),),
-                              content: Text("Vuelva a intentar.",style: GoogleFonts.openSans(),),
+                              title: Text(
+                                "No puede dejar campos vacios o incompletos!",
+                                style: GoogleFonts.openSans(),
+                              ),
+                              content: Text(
+                                "Vuelva a intentar.",
+                                style: GoogleFonts.openSans(),
+                              ),
                               actions: <Widget>[
                                 FlatButton(
                                     onPressed: () {
                                       Navigator.of(context).pop("Ok");
                                     },
-                                    child: Text("Ok", style: GoogleFonts.openSans(),))
+                                    child: Text(
+                                      "Ok",
+                                      style: GoogleFonts.openSans(),
+                                    ))
                               ],
                             ));
                   }
@@ -115,30 +132,52 @@ class _BodyState extends State<Body> {
                     showDialog(
                         context: context,
                         builder: (BuildContext context) => AlertDialog(
-                              title: Text("La tarjeta que usted ingreso no es VISA!", style: GoogleFonts.openSans(),),
-                              content: Text("Vuelva a intentar.", style: GoogleFonts.openSans(),),
+                              title: Text(
+                                "La tarjeta que usted ingreso no es VISA!",
+                                style: GoogleFonts.openSans(),
+                              ),
+                              content: Text(
+                                "Vuelva a intentar.",
+                                style: GoogleFonts.openSans(),
+                              ),
                               actions: <Widget>[
                                 FlatButton(
                                     onPressed: () {
                                       Navigator.of(context).pop("Ok");
                                     },
-                                    child: Text("Ok", style: GoogleFonts.openSans(),))
+                                    child: Text(
+                                      "Ok",
+                                      style: GoogleFonts.openSans(),
+                                    ))
                               ],
                             ));
                   }
-                  if (CreditCardValidator.isCreditCardValid(cardNumber: numeroT) == false && numeroT.length == 16) {
+                  if (CreditCardValidator.isCreditCardValid(
+                                  cardNumber: numeroT) ==
+                              false &&
+                          numeroT.length == 16 ||
+                      numeroT.length < 16) {
                     flag3 = true;
                     showDialog(
                         context: context,
                         builder: (BuildContext context) => AlertDialog(
-                              title: Text("El numero de tu tarjeta de credito no es valido.", style: GoogleFonts.openSans(),),
-                              content: Text("Vuelva a intentar.", style: GoogleFonts.openSans(),),
+                              title: Text(
+                                "El numero de tu tarjeta de credito no es valido.",
+                                style: GoogleFonts.openSans(),
+                              ),
+                              content: Text(
+                                "Vuelva a intentar.",
+                                style: GoogleFonts.openSans(),
+                              ),
                               actions: <Widget>[
                                 FlatButton(
                                     onPressed: () {
                                       Navigator.of(context).pop("Ok");
                                     },
-                                    child: Text("Ok", style: GoogleFonts.openSans(),))
+                                    child: Text(
+                                      "Ok",
+                                      style: GoogleFonts.openSans(),
+                                    ))
                               ],
                             ));
                   }
