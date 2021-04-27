@@ -11,7 +11,7 @@ class PaymentScreen extends StatelessWidget {
         title: Column(
           children: [
             Text(
-              "Elije tu forma de pago",
+              "Elige tu forma de pago",
               style: TextStyle(color: Colors.black),
             ),
           ],

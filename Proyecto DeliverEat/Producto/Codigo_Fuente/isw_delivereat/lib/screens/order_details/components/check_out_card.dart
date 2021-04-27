@@ -41,7 +41,6 @@ class CheckoutCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                Text("aaaaaaaaaaaaaaaaaaaa", style: GoogleFonts.openSans(),),
                 const SizedBox(width: 10),
                 Icon(
                   Icons.arrow_forward_ios,
@@ -56,7 +55,7 @@ class CheckoutCard extends StatelessWidget {
               children: [
                 Text.rich(
                   TextSpan(
-                    text: "   Total\n(+\$100 de envio):\n",
+                    text: "   Total\n(+\$100 de envío):\n",
                     children: [
                       TextSpan(
                         text: "\$437.15",

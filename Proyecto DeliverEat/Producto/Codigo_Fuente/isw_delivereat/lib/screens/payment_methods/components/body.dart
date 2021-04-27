@@ -53,7 +53,7 @@ class _BodyState extends State<Body> {
                     press: () {
                       showDialog(context: context,
                           builder: (BuildContext context) => AlertDialog(
-                            title: Text("Debe ingresar con cuanto va a pagar:",style: GoogleFonts.openSans(),),
+                            title: Text("Debe ingresar con cuánto va a pagar:",style: GoogleFonts.openSans(),),
                             content: TextField(
                               keyboardType: TextInputType.number,
                               style: GoogleFonts.openSans(),

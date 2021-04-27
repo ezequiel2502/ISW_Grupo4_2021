@@ -16,7 +16,7 @@ class DataScreen extends StatelessWidget {
               style: GoogleFonts.openSans(textStyle: TextStyle(color: Colors.black)),
             ),
             Text(
-              "Ultimo paso!",
+              "Último paso!",
               style: GoogleFonts.openSans(textStyle: Theme.of(context).textTheme.caption),
             ),
           ],

@@ -39,7 +39,7 @@ class _BodyState extends State<Body> {
               decoration: InputDecoration(
                 labelStyle: GoogleFonts.openSans(),
                 filled: true,
-                labelText: "Direccion (Nombre de la calle) ",
+                labelText: "Dirección (nombre de la calle) ",
               ),
             ),
             SizedBox(height: 15,),
@@ -54,7 +54,7 @@ class _BodyState extends State<Body> {
               decoration: InputDecoration(
                 labelStyle: GoogleFonts.openSans(),
                 filled: true,
-                labelText: "Numero de la calle",
+                labelText: "Número de la calle",
               ),
             ),
             SizedBox(height: 15,),
@@ -105,7 +105,7 @@ class _BodyState extends State<Body> {
               ),
             ),
             ListTile(
-              title:  Text('Otro dia/horario',style: GoogleFonts.openSans(),),
+              title:  Text('Otro día/horario',style: GoogleFonts.openSans(),),
               leading: Radio<SingingCharacter>(
                 value: SingingCharacter.otro,
                 groupValue: _character,
@@ -117,7 +117,7 @@ class _BodyState extends State<Body> {
                         lastDate: DateTime(9999)).then((value){
                           setState(() {
                       _dateTime = value;
-                      diaEntrega ="El dia de la entrega es: ";
+                      diaEntrega ="El día de la entrega es: ";
                     });
                         });
                     showTimePicker(context: context,
@@ -132,8 +132,8 @@ class _BodyState extends State<Body> {
                 },
               ),
             ),
-            Text(mostrarFecha(diaEntrega, _dateTime.toString())),
-            Text(mostrarTiempo(tiempoEntrega,_time.toString())),
+            if(diaEntrega != null && _dateTime != null) Text(mostrarFecha(diaEntrega, _dateTime.toString())),
+            if(tiempoEntrega != null && _time != null) Text(mostrarTiempo(tiempoEntrega,_time.toString())),
             SizedBox(height: 50),
             SizedBox(
               width: getProportionateScreenWidth(190),
@@ -156,7 +156,7 @@ class _BodyState extends State<Body> {
                   else{
                     showDialog(context: context,
                         builder: (BuildContext context) => AlertDialog(
-                          title: Text("No puede dejar campos vacios!"),
+                          title: Text("No puede dejar campos vacíos!"),
                           content: Text("Vuelva a intentar."),
                           actions: <Widget>[
                             FlatButton(
@@ -176,12 +176,20 @@ class _BodyState extends State<Body> {
       ),
     );
   }
+
+  /*
+  void sendDataToConfirmationScreen(BuildContext context){
+    Navigator.push(context, MaterialPageRoute(
+        builder: (context) => ConfirmationScreen(text: "tiempo: " + tiempoEntrega + diaEntrega)
+    ));
+  } */
+
   mostrarTiempo(String tiempoEntrega, String time) {
     for(int i = 0; i < time.length; i++){
       if(i == 10 ||i == 11 ||i == 12 ||i == 13 ||i == 14 ){
         tiempoEntrega += time[i];
       }
-    };
+    }
     return tiempoEntrega;
   }
 
@@ -190,7 +198,7 @@ class _BodyState extends State<Body> {
       if(i == 0||i == 1||i == 2||i == 3 || i == 4 ||i == 5 ||i == 6 ||i == 7 ||i == 8||i == 9||i == 10 ){
         diaEntrega += datetime[i];
       }
-    };
+    }
     return diaEntrega;
   }
 }
