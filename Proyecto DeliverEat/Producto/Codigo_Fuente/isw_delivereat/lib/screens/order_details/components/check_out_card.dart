@@ -4,6 +4,7 @@ import 'package:isw_delivereat/screens/payment_methods/payment_screen.dart';
 import '../../../components/default_button.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
+import '../../data_screen/data_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CheckoutCard extends StatelessWidget {
@@ -40,18 +41,7 @@ class CheckoutCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                Container(
-                  padding: EdgeInsets.all(10),
-                  height: getProportionateScreenWidth(40),
-                  width: getProportionateScreenWidth(40),
-                  decoration: BoxDecoration(
-                    color: Color(0xFFF5F6F9),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: SvgPicture.asset("assets/icons/receipt.svg"),
-                ),
-                Spacer(),
-                Text("Añadir codigo de descuento", style: GoogleFonts.openSans(),),
+                Text("aaaaaaaaaaaaaaaaaaaa", style: GoogleFonts.openSans(),),
                 const SizedBox(width: 10),
                 Icon(
                   Icons.arrow_forward_ios,
@@ -66,22 +56,13 @@ class CheckoutCard extends StatelessWidget {
               children: [
                 Text.rich(
                   TextSpan(
-                    text: "Total\n(+\$100 de envio):\n",
+                    text: "   Total\n(+\$100 de envio):\n",
                     children: [
                       TextSpan(
                         text: "\$437.15",
                         style: GoogleFonts.openSans(textStyle:TextStyle(fontSize: 16,color: Colors.black) ),
                       ),
                     ],
-                  ),
-                ),
-                SizedBox(
-                  width: getProportionateScreenWidth(190),
-                  child: DefaultButton(
-                    text: "Continuar",
-                    press: () {
-                      Navigator.pushNamed(context, PaymentScreen.routeName);
-                    },
                   ),
                 ),
               ],

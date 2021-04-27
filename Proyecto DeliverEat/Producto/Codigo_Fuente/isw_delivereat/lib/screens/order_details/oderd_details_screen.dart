@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:isw_delivereat/models/Cart.dart';
-import 'components/body.dart';
+import 'package:isw_delivereat/screens/order_details/components/body.dart';
+import '../../models/Cart.dart';
 import 'components/check_out_card.dart';
 
-class CartScreen extends StatelessWidget {
-  static String routeName = "/order";
+class OrderScreen extends StatelessWidget {
+  static String routeName = "/cart";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,12 +20,8 @@ class CartScreen extends StatelessWidget {
       title: Column(
         children: [
           Text(
-            "Tu carrito",
+            "Detalles de mi pedido",
             style: GoogleFonts.openSans(textStyle: TextStyle(color: Colors.black)),
-          ),
-          Text(
-            "${demoCarts.length} items",
-            style: GoogleFonts.openSans(textStyle: Theme.of(context).textTheme.caption),
           ),
         ],
       ),
