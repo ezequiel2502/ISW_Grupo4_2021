@@ -20,6 +20,8 @@ class _BodyState extends State<Body> {
   String ciudad ="";
   String tiempoEntrega ="";
   String diaEntrega ="";
+  int day;
+  int hour;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -150,8 +152,23 @@ class _BodyState extends State<Body> {
                       continue;
                     }
                   }
+                  if(_dateTime == null && _time == null){
+                    day = DateTime.now().day ;
+                    hour = (DateTime.now()).add(Duration(hours: 1)).hour;
+                  } else{
+                    day = _dateTime.day ;
+                    hour = _dateTime.add(Duration(hours:1)).hour;
+                  }
+
                   if(flag == true){
-                    Navigator.pushNamed(context, ConfirmationScreen.routeName);
+                    Navigator.push(context, MaterialPageRoute(
+                        builder: (context) => ConfirmationScreen(text:
+                            "Dirección de entrega: " + direccion + ", " + numero +
+                            "\nCiudad: " + ciudad +
+                            "\nFecha y hora estimada de entrega: " + day.toString() + ", " + hour.toString()
+                        )
+                    ));
+                    // Navigator.pushNamed(context, ConfirmationScreen.routeName);
                   }
                   else{
                     showDialog(context: context,
@@ -177,12 +194,12 @@ class _BodyState extends State<Body> {
     );
   }
 
-  /*
+
   void sendDataToConfirmationScreen(BuildContext context){
     Navigator.push(context, MaterialPageRoute(
-        builder: (context) => ConfirmationScreen(text: "tiempo: " + tiempoEntrega + diaEntrega)
+        builder: (context) => ConfirmationScreen(text: " de calle: ")
     ));
-  } */
+  }
 
   mostrarTiempo(String tiempoEntrega, String time) {
     for(int i = 0; i < time.length; i++){
