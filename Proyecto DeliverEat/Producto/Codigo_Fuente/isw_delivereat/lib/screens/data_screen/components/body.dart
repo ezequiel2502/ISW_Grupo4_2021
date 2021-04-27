@@ -13,11 +13,13 @@ class Body extends StatefulWidget {
 
 class _BodyState extends State<Body> {
   SingingCharacter _character = SingingCharacter.ya;
-  DateTime _dateTime;
-  TimeOfDay _time;
+  DateTime _dateTime = null;
+  TimeOfDay _time = null;
   String direccion = "";
   String numero = "";
   String ciudad ="";
+  String tiempoEntrega ="";
+  String diaEntrega ="";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -115,12 +117,14 @@ class _BodyState extends State<Body> {
                         lastDate: DateTime(9999)).then((value){
                           setState(() {
                       _dateTime = value;
+                      diaEntrega ="El dia de la entrega es: ";
                     });
                         });
                     showTimePicker(context: context,
                         initialTime: TimeOfDay.now()).then((value){
                           setState(() {
                             _time = value;
+                            tiempoEntrega= "Horario de entrega estimado: ";
                           });
                     });
                     _character = value;
@@ -128,14 +132,13 @@ class _BodyState extends State<Body> {
                 },
               ),
             ),
-
-            Text(_dateTime.toString()),
-            Text(_time.toString()),
+            Text(mostrarFecha(diaEntrega, _dateTime.toString())),
+            Text(mostrarTiempo(tiempoEntrega,_time.toString())),
             SizedBox(height: 50),
             SizedBox(
               width: getProportionateScreenWidth(190),
               child: DefaultButton(
-                text: "Finalizar Pedido",
+                text:"Finalizar Pedido",
                 press: () {
                   bool flag = false;
                   for(int i=0; i < cities.length; i++){
@@ -173,7 +176,25 @@ class _BodyState extends State<Body> {
       ),
     );
   }
+  mostrarTiempo(String tiempoEntrega, String time) {
+    for(int i = 0; i < time.length; i++){
+      if(i == 10 ||i == 11 ||i == 12 ||i == 13 ||i == 14 ){
+        tiempoEntrega += time[i];
+      }
+    };
+    return tiempoEntrega;
+  }
+
+  mostrarFecha(String diaEntrega, String datetime){
+    for(int i = 0; i < datetime.length; i++){
+      if(i == 0||i == 1||i == 2||i == 3 || i == 4 ||i == 5 ||i == 6 ||i == 7 ||i == 8||i == 9||i == 10 ){
+        diaEntrega += datetime[i];
+      }
+    };
+    return diaEntrega;
+  }
 }
+
 
 
 
