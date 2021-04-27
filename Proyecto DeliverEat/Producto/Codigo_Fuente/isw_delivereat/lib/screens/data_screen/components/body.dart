@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:isw_delivereat/components/default_button.dart';
+import 'package:isw_delivereat/screens/order_details/oderd_details_screen.dart';
 import 'package:isw_delivereat/screens/product_confirmation/confirmation_screen.dart';
 import '../../../size_config.dart';
 
@@ -153,16 +154,14 @@ class _BodyState extends State<Body> {
                     }
                   }
                   if(_dateTime == null && _time == null){
-                    day = DateTime.now().day ;
-                    hour = (DateTime.now()).add(Duration(hours: 1)).hour;
+                    _dateTime = DateTime.now().add(Duration(hours: 1));
                   } else{
-                    day = _dateTime.day ;
-                    hour = _dateTime.add(Duration(hours:1)).hour;
+                    _dateTime = _dateTime.add(Duration(hours:1));
                   }
 
                   if(flag == true){
                     Navigator.push(context, MaterialPageRoute(
-                        builder: (context) => ConfirmationScreen(text:
+                        builder: (context) => OrderScreen(text:
                             "Dirección de entrega: " + direccion + ", " + numero +
                             "\nCiudad: " + ciudad +
                             "\nFecha y hora estimada de entrega: " + day.toString() + ", " + hour.toString()
@@ -192,13 +191,6 @@ class _BodyState extends State<Body> {
         ),
       ),
     );
-  }
-
-
-  void sendDataToConfirmationScreen(BuildContext context){
-    Navigator.push(context, MaterialPageRoute(
-        builder: (context) => ConfirmationScreen(text: " de calle: ")
-    ));
   }
 
   mostrarTiempo(String tiempoEntrega, String time) {

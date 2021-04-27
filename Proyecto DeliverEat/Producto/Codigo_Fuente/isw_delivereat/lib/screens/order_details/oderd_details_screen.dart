@@ -6,11 +6,16 @@ import 'components/check_out_card.dart';
 
 class OrderScreen extends StatelessWidget {
   static String routeName = "/cart";
+
+  final String text;
+  OrderScreen({Key key, @required this.text}) : super(key:key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
-      body: Body(),
+      body:
+        new Text(text),
       bottomNavigationBar: CheckoutCard(),
     );
   }
@@ -20,7 +25,7 @@ class OrderScreen extends StatelessWidget {
       title: Column(
         children: [
           Text(
-            "Detalles de mi pedido",
+            "Detalles de mi pedido\n",
             style: GoogleFonts.openSans(textStyle: TextStyle(color: Colors.black)),
           ),
         ],

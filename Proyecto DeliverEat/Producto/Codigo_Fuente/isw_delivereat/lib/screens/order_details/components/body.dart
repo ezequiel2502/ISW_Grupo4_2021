@@ -10,12 +10,14 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
+
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
       padding:
           EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
-      child: ListView.builder(
+      child:
+      ListView.builder(
         itemCount: demoCarts.length,
         itemBuilder: (context, index) => Padding(
           padding: EdgeInsets.symmetric(vertical: 10),

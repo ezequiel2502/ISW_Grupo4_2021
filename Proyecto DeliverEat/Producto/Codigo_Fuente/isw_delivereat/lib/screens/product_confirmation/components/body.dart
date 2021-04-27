@@ -13,6 +13,9 @@ class Body extends StatefulWidget {
 
 class _BodyState extends State<Body> {
   @override
+   final String text;
+  _BodyState ({@required this.text});
+
   Widget build(BuildContext context) {
     return Column(
       children: [
