@@ -45,10 +45,10 @@ flutter_launcher_icon:
 flutter_icons:
   android: true
   ios: true
-  image_path_android: "assets/icons/gorro-chef.png"
-  image_path_ios: "assets/icons/gorro-chef.png"
-  adaptative_icon:background: "assets/icons/gorro-chef.png"
-  adaptative_icon:foreground: "assets/icons/gorro-chef.png"
+  image_path_android: "assets/icons/pedido.png"
+  image_path_ios: "assets/icons/pedido.png"
+  adaptative_icon:background: "assets/icons/pedido.png"
+  adaptative_icon:foreground: "assets/icons/pedido.png"
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
